@@ -1,0 +1,4 @@
+*, *::before, *::after { box-sizing: border-box; }
+html, body { margin: 0; height: 100%; overflow: hidden; background: #0b1f12; overscroll-behavior: none; }
+#scene { position: fixed; inset: 0; width: 100vw; height: 100vh; display: block; touch-action: none; }
+#ui { position: fixed; inset: 0; pointer-events: none; z-index: 10; }
