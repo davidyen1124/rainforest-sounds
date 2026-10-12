@@ -4,6 +4,7 @@ import { FontLoader, type Font } from 'three/examples/jsm/loaders/FontLoader.js'
 import { TextGeometry } from 'three/examples/jsm/geometries/TextGeometry.js';
 import fontJson from './fonts/luckiest.typeface.json';
 import type { Bus, GravityMode, SpawnKind } from '../bus';
+import { asset } from '../asset';
 import { Sound } from './audio';
 import { barkTexture, groundTexture, stickerTexture, TweetTexture } from './textures';
 
@@ -197,7 +198,7 @@ export class World {
     s.add(fill);
 
     // backdrop: a curved wall of painted jungle
-    const backTex = new THREE.TextureLoader().load('/assets/backdrop.webp');
+    const backTex = new THREE.TextureLoader().load(asset('backdrop.webp'));
     backTex.colorSpace = THREE.SRGBColorSpace;
     const backdrop = new THREE.Mesh(
       new THREE.CylinderGeometry(55, 55, 60, 48, 1, true, Math.PI * 0.55, Math.PI * 0.9),

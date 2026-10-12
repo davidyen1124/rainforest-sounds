@@ -1,5 +1,6 @@
 import './ui.css';
 import type { Bus } from '../bus';
+import { asset } from '../asset';
 import { $, el, icon, pick } from './dom';
 import { Feed } from './feed';
 import { Music } from './music';
@@ -13,7 +14,7 @@ export function mountUI(root: HTMLElement, bus: Bus) {
   const top = el(`
     <header class="top">
       <div class="brand glass">
-        <img class="brand-cover" src="/assets/cover.webp" alt="">
+        <img class="brand-cover" src="${asset('cover.webp')}" alt="">
         <div class="brand-txt">
           <div class="brand-name">Rainforest Sounds<sup>™</sup><span class="brand-check">${icon('check', 11)}</span></div>
           <div class="brand-sub" data-nc="a place, i guess">Dopamine Reset Facility</div>

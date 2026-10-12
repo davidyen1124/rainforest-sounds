@@ -1,4 +1,5 @@
 import type { Bus, TrackId } from '../bus';
+import { asset } from '../asset';
 import { TRACKS, trackById } from '../tracks';
 import { $, el, fmtTime, icon, pick, sticker } from './dom';
 import type { Feed } from './feed';
@@ -36,7 +37,7 @@ export class Music {
     this.player = el(`
       <footer class="player glass">
         <div class="np">
-          <img class="np-cover" src="/assets/cover.webp" alt="">
+          <img class="np-cover" src="${asset('cover.webp')}" alt="">
           <div class="np-meta">
             <div class="np-title"><span></span></div>
             <div class="np-artist"></div>
@@ -70,7 +71,7 @@ export class Music {
         ${sticker('frog', '🐸', 'pl-peek')}
         <button class="ib pl-close" aria-label="Close playlist">${icon('close', 18)}</button>
         <div class="pl-head">
-          <img class="pl-cover" src="/assets/cover.webp" alt="Rainforest Sounds cover">
+          <img class="pl-cover" src="${asset('cover.webp')}" alt="Rainforest Sounds cover">
           <div class="pl-info">
             <div class="pl-kicker">Public Playlist</div>
             <h2 class="pl-title">Rainforest Sounds</h2>

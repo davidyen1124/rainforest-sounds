@@ -1,3 +1,5 @@
+import { asset } from '../asset';
+
 const PATHS = {
   play: 'M8 5.14v13.72a1 1 0 0 0 1.52.85l10.6-6.86a1 1 0 0 0 0-1.7L9.52 4.29A1 1 0 0 0 8 5.14z',
   pause: 'M6 5h4v14H6zM14 5h4v14h-4z',
@@ -50,4 +52,4 @@ export const sleep = (ms: number) => new Promise<void>((r) => setTimeout(r, ms))
 
 /** A sticker <img> that quietly becomes an emoji if the PNG is missing. */
 export const sticker = (name: string, emoji: string, cls = '') =>
-  `<span class="stk ${cls}" data-emoji="${emoji}"><img src="/assets/${name}.webp" alt="" draggable="false" onerror="this.parentNode.classList.add('stk--fallback');this.remove()"></span>`;
+  `<span class="stk ${cls}" data-emoji="${emoji}"><img src="${asset(`${name}.webp`)}" alt="" draggable="false" onerror="this.parentNode.classList.add('stk--fallback');this.remove()"></span>`;

@@ -1,9 +1,10 @@
 import * as THREE from 'three';
+import { asset } from '../asset';
 
 const cache = new Map<string, THREE.Texture>();
 
 /**
- * Loads /assets/<name>.webp onto a canvas texture. Until (or if never) the image loads,
+ * Loads assets/<name>.webp onto a canvas texture. Until (or if never) the image loads,
  * the texture shows a big emoji, so a missing asset degrades to "emoji sticker" instead of a white square.
  */
 export function stickerTexture(name: string, emoji: string): THREE.Texture {
@@ -25,7 +26,7 @@ export function stickerTexture(name: string, emoji: string): THREE.Texture {
     g.drawImage(img, 0, 0, 512, 512);
     tex.needsUpdate = true;
   };
-  img.src = `/assets/${name}.webp`;
+  img.src = asset(`${name}.webp`);
   cache.set(name, tex);
   return tex;
 }
